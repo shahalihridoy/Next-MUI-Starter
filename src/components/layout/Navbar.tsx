@@ -66,22 +66,11 @@ const Navbar = () => {
                     elevation={6}
                     sx={{ minWidth: 120, marginTop: "0.8rem", py: "0.25rem" }}
                   >
-                    {item.children.map((child) =>
-                      child.extlink ? (
-                        <a
-                          href={child.extlink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          key={child.title}
-                        >
-                          <MenuItem>{child.title}</MenuItem>
-                        </a>
-                      ) : (
-                        <NextLink href={`${child.url}`} key={child.title}>
-                          <MenuItem>{child.title}</MenuItem>
-                        </NextLink>
-                      ),
-                    )}
+                    {item.children.map((child) => (
+                      <NextLink href={`${child.url}`} key={child.title}>
+                        <MenuItem>{child.title}</MenuItem>
+                      </NextLink>
+                    ))}
                   </Card>
                 </Box>
               </Box>
