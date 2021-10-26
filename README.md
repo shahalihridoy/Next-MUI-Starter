@@ -1,9 +1,9 @@
 <p align="center">
-  <h1>Trackem</h1>
+  <h1 align="center">Next-MUI-Starter</h1>
 </p>
 
 <p align="center">
-  A tracking project with Next.Js
+  Next.Js boilerplate with Material-UI v5
 </p>
 
 <br>
@@ -11,9 +11,6 @@
 - 📏 **ESLint** — Pluggable JavaScript linter
 - 💖 **Prettier** - Opinionated Code Formatter
 - 🐶 **Husky** — Use git hooks with ease
-- 📄 **Commitizen** - Conventional commit messages CLI
-- 🚓 **Commitlint** - Lint commit messages
-- 🖌 **Renovate** - Dependency update tool
 - 🚫 **lint-staged** - Run linters against staged git files
 - 👷 **PR Workflow** - Run Type Check & Linters on pull requests
 - 🗂 **Absolute import** - Import folders and files using the `@` prefix
@@ -31,5 +28,3 @@ or
 2. `npm run dev`
 
 To view the project open `http://localhost:3000`.
-
-Made with ♥ by Md Shah Ali
