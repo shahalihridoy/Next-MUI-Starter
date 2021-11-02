@@ -1,5 +1,16 @@
-import Image from "next/image";
+import { SxProps } from "@mui/system";
+import Image, { ImageProps } from "next/image";
+import { Span } from "./Typography";
 
-const NextImage = Image;
+type NextImageProps = {
+  sx?: SxProps;
+  children?: never;
+};
+
+const NextImage: React.FC<NextImageProps & ImageProps> = ({ sx, ...props }) => (
+  <Span sx={{ lineHeight: 0, ...sx }}>
+    <Image alt="next-image" {...props} />
+  </Span>
+);
 
 export default NextImage;
