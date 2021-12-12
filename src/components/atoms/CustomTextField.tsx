@@ -1,16 +1,24 @@
 import { TextField, TextFieldProps } from "@mui/material";
-import { styled } from "@mui/system";
+import { styled } from "@mui/material/styles";
 
 const CustomTextField = styled(TextField)<TextFieldProps>(({ theme }) => ({
-  borderColor: theme.palette.primary.main,
-}));
-
-CustomTextField.defaultProps = {
-  InputProps: {
-    sx: {
-      borderRadius: "11px",
-    },
+  "& .MuiInputLabel-root": {
+    position: "relative",
+    transform: "none",
+    marginBottom: "0.5rem",
+    fontWeight: "600",
+    color: theme.palette.primary.dark,
   },
-};
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: theme.palette.primary.main,
+  },
+  "& .MuiOutlinedInput-input": {
+    position: "relative",
+    transform: "none",
+  },
+  "& .MuiOutlinedInput-notchedOutline legend": {
+    width: 0,
+  },
+}));
 
 export default CustomTextField;

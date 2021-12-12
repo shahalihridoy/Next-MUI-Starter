@@ -9,30 +9,35 @@ interface FormCardProps {
   title: string;
   icon?: (props: SvgIconProps) => JSX.Element;
   sx?: SxProps;
+  contentSx?: SxProps;
+  headerSx?: SxProps;
 }
 
 const FormCard: React.FC<FormCardProps> = ({
   title,
   icon: Icon,
   sx,
+  contentSx,
+  headerSx,
   children,
 }) => {
   return (
-    <Card>
+    <Card sx={sx}>
       <CustomFlexBox
         sx={{
-          padding: 2,
+          py: 2,
+          px: 3,
           alignItems: "center",
           bgcolor: "primary.main",
-          marginBottom: "0.5rem",
+          ...headerSx,
         }}
       >
-        <H5 color="white" mr={1}>
+        <H5 color="white" fontWeight={600} mr={1}>
           {title}
         </H5>
         {Icon && <Icon fontSize="small" sx={{ color: "background.paper" }} />}
       </CustomFlexBox>
-      <CustomBox sx={{ padding: 2, ...sx }}>{children}</CustomBox>
+      <CustomBox sx={{ padding: 3, ...contentSx }}>{children}</CustomBox>
     </Card>
   );
 };

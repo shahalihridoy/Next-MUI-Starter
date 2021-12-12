@@ -5,6 +5,7 @@ import React, {
   CSSProperties,
   Fragment,
   ReactElement,
+  useState,
 } from "react";
 
 interface MenuProps {
@@ -26,7 +27,7 @@ const CustomMenu: React.FC<MenuProps> = ({
   children,
   ...props
 }) => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -48,7 +49,6 @@ const CustomMenu: React.FC<MenuProps> = ({
           onClick: handler.props.onClick || handleClick,
         })}
       <Menu
-        // getContentAnchorEl={null}
         anchorEl={anchorEl}
         open={open !== undefined ? open : !!anchorEl}
         onClose={handleClose}

@@ -1,4 +1,3 @@
-import CustomFlexBox from "@components/atoms/CustomFlexBox";
 import NextImage from "@components/atoms/NextImage";
 import NextLink from "@components/atoms/NextLink";
 import { ArrowDropDown } from "@mui/icons-material";
@@ -7,7 +6,10 @@ import AppBar from "@mui/material/AppBar";
 import { Box } from "@mui/system";
 import { NAVBAR_HEIGHT } from "@shared/constants";
 import navbarNavigations from "@shared/navbarNavigations";
+import clsx from "clsx";
 import React from "react";
+import StyledNavLinks from "./NavbarLinks.style";
+import Sidenav from "./Sidenav";
 
 const Navbar = () => {
   return (
@@ -15,7 +17,7 @@ const Navbar = () => {
       color="default"
       position="fixed"
       elevation={3}
-      sx={{ bgcolor: "background.paper" }}
+      sx={{ bgcolor: "background.paper", borderRadius: 0 }}
     >
       <Container
         sx={{
@@ -25,7 +27,7 @@ const Navbar = () => {
           height: NAVBAR_HEIGHT,
         }}
       >
-        <NextLink href="/">
+        <NextLink href="/" sx={{ lineHeight: 1 }}>
           <NextImage
             src="/assets/trackem-logo-full.svg"
             width={176}
@@ -33,25 +35,21 @@ const Navbar = () => {
           />
         </NextLink>
 
-        <CustomFlexBox
-          sx={{
-            "& .button-link": {
-              marginRight: "1.5rem",
-            },
-          }}
-        >
-          {navbarNavigations.map((item, ind) =>
+        <Sidenav />
+
+        <StyledNavLinks>
+          {navbarNavigations.map((item) =>
             item.children ? (
               <Box
                 position="relative"
+                key={item.title}
                 sx={{
                   "&:hover": { "& .dropdown-menu": { display: "block" } },
                 }}
-                key={item.title}
               >
                 <Button
-                  className="button-link"
-                  sx={{ pr: "0.5rem !important" }}
+                  className="hover-bg-none"
+                  sx={{ px: "0.5rem", mr: "1.5rem" }}
                 >
                   {item.title}
                   <ArrowDropDown fontSize="small" sx={{ ml: "2px" }} />
@@ -75,16 +73,21 @@ const Navbar = () => {
                 </Box>
               </Box>
             ) : (
-              <NextLink href={item.url || "/"} key={item.title}>
+              <NextLink
+                href={item.url || "/"}
+                activeClass="nav-active"
+                key={item.title}
+                exact
+                sx={{ mr: !item.outlined ? "1.5rem" : 0 }}
+              >
                 <Button
-                  className="button-link"
-                  variant={item.outlined ? "outlined" : "text"}
+                  className={clsx({
+                    "hover-effect": !item.outlined,
+                    "hover-bg-none": !item.outlined,
+                  })}
                   sx={{
-                    borderRadius: item.outlined ? "300px" : "4px",
-                    marginRight:
-                      ind === navbarNavigations.length - 1
-                        ? "0px !important"
-                        : "0.25rem",
+                    position: "relative",
+                    bgcolor: item.outlined ? "grey.100" : "transparent",
                   }}
                 >
                   {item.title}
@@ -92,7 +95,7 @@ const Navbar = () => {
               </NextLink>
             ),
           )}
-        </CustomFlexBox>
+        </StyledNavLinks>
       </Container>
     </AppBar>
   );

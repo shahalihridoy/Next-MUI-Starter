@@ -1,6 +1,6 @@
 import CustomBox from "@components/atoms/CustomBox";
-import { NAVBAR_HEIGHT } from "@shared/constants";
 import React, { Fragment } from "react";
+import AppBreadcrumb from "./AppBreadcrumb";
 import Navbar from "./Navbar";
 
 const AppLayout: React.FC = ({ children }) => {
@@ -8,9 +8,8 @@ const AppLayout: React.FC = ({ children }) => {
     <Fragment>
       <div>
         <Navbar />
-        <CustomBox sx={{ marginTop: `calc(${NAVBAR_HEIGHT}px + 1.5rem)` }}>
-          {children}
-        </CustomBox>
+        <AppBreadcrumb />
+        <CustomBox sx={{ marginTop: `1.75rem` }}>{children}</CustomBox>
       </div>
     </Fragment>
   );

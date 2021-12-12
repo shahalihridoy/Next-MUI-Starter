@@ -8,6 +8,7 @@ type NextLinkProps = {
   sx?: SxProps;
   exact?: boolean;
   activeClass?: string;
+  className?: string;
 };
 
 const NextLink: React.FC<LinkProps & NextLinkProps> = ({
@@ -15,6 +16,7 @@ const NextLink: React.FC<LinkProps & NextLinkProps> = ({
   exact,
   children,
   activeClass,
+  className,
   ...props
 }) => {
   const { pathname } = useRouter();
@@ -27,6 +29,7 @@ const NextLink: React.FC<LinkProps & NextLinkProps> = ({
       <MuiLink
         className={clsx({
           [activeClass || "active"]: isActive,
+          [className as string]: className,
         })}
         sx={sx}
       >
