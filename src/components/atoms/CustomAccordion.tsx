@@ -1,6 +1,6 @@
-import { KeyboardArrowDown } from "@mui/icons-material";
 import { Button, Collapse } from "@mui/material";
-import { SxProps } from "@mui/system";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import { SxProps } from "@mui/material";
 import React, { Fragment, useCallback, useEffect, useState } from "react";
 
 export interface CustomAccordionProps {

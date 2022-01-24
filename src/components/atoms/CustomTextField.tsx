@@ -15,9 +15,22 @@ const CustomTextField = styled(TextField)<TextFieldProps>(({ theme }) => ({
   "& .MuiOutlinedInput-input": {
     position: "relative",
     transform: "none",
+    height: "1.5rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+  },
+  "& .MuiSelect-select.MuiSelect-outlined": {
+    display: "inline-flex",
+    alignItems: "center",
+    height: "1.5rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
   },
   "& .MuiOutlinedInput-notchedOutline legend": {
     width: 0,
+  },
+  "& fieldset": {
+    borderColor: "transparent",
   },
 }));
 

@@ -1,6 +1,6 @@
-import MuiLink from "@mui/material/Link";
-import { SxProps } from "@mui/system";
 import clsx from "clsx";
+import MuiLink from "@mui/material/Link";
+import { SxProps } from "@mui/material";
 import { useRouter } from "next/dist/client/router";
 import Link, { LinkProps } from "next/link";
 

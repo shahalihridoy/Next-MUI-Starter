@@ -3,7 +3,7 @@ import NextLink from "@components/atoms/NextLink";
 import { ArrowDropDown } from "@mui/icons-material";
 import { Button, Card, Container, MenuItem } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
 import { NAVBAR_HEIGHT } from "@shared/constants";
 import navbarNavigations from "@shared/navbarNavigations";
 import clsx from "clsx";

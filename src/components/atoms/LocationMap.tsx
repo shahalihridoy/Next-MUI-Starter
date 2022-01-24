@@ -1,7 +1,7 @@
 import Send from "@components/icons/Send";
 import { Circle } from "@mui/icons-material";
 import { Button, Card, Divider, Grow } from "@mui/material";
-import { SxProps } from "@mui/system";
+import { SxProps } from "@mui/material";
 import GoogleMapReact from "google-map-react";
 import React, { useState } from "react";
 import CustomBox from "./CustomBox";

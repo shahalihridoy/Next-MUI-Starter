@@ -1,5 +1,5 @@
 import { Card, SvgIconProps } from "@mui/material";
-import { SxProps } from "@mui/system";
+import { SxProps } from "@mui/material";
 import React from "react";
 import CustomBox from "./CustomBox";
 import CustomFlexBox from "./CustomFlexBox";
